@@ -2,6 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:message_quest/maps/start_map.dart';
+import 'package:message_quest/mob/cat_sprite.dart';
 import 'package:message_quest/player/player_sprite.dart';
 
 void main() async {
@@ -13,6 +14,7 @@ void main() async {
   }
   // アセットからSpriteSheetを生成
   await PlayerSpriteSheet.load(); // ←追加
+  await CatSprite.load();
   runApp(const MyApp());
 }
 

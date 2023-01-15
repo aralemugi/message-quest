@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/services.dart';
+import 'package:message_quest/mob/cat.dart';
+import 'package:message_quest/mob/cat_sprite.dart';
 
 import '../player/player_beared_dude.dart';
 import '../player/player_sprite.dart';
@@ -17,13 +19,26 @@ class _StartMapState extends State<StartMap> {
 
   @override
   Widget build(BuildContext context) {
+
+    late Cat cat;
     // ゲーム画面Widget
     return BonfireWidget(
-      showCollisionArea: true, // 当たり判定の可視化
+      showCollisionArea: false, // 当たり判定の可視化
       // マップ用jsonファイル読み込み
       map: WorldMapByTiled(
+
         'maps/new_start_map.json',
         forceTileSize: Vector2(tileWidthSize, tileHeightSize),
+
+        objectsBuilder: {
+          'cat':(properties){
+            cat = Cat(
+                properties.position,
+                CatSprite.sheet
+            );
+            return cat;
+          },
+        }
       ),
 
       // プレイヤーキャラクター

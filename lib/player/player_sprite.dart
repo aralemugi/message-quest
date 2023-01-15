@@ -15,6 +15,5 @@ class PlayerSpriteSheet {
     final image = await Flame.images.load(path);
     // 1枚ずつ分割する (横40x縦8)
     return SpriteSheet.fromColumnsAndRows(image: image, columns: 3, rows: 4);
-    // return SpriteSheet(image: image, srcSize: Vector2(32, 32));
   }
 }

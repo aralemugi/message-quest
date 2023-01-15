@@ -47,6 +47,29 @@
          "y":0
         }, 
         {
+         "class":"cat",
+         "draworder":"topdown",
+         "id":3,
+         "name":"cat",
+         "objects":[
+                {
+                 "class":"cat",
+                 "height":18.6396761133603,
+                 "id":1,
+                 "name":"cat",
+                 "rotation":0,
+                 "visible":true,
+                 "width":18.6396761133603,
+                 "x":296.599190283401,
+                 "y":901.821862348178
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "data":[124, 124, 124, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 104, 124, 124, 124,
             124, 124, 124, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 104, 124, 124, 124,
             124, 124, 124, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 104, 124, 124, 124,
@@ -90,8 +113,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":3,
- "nextobjectid":1,
+ "nextlayerid":4,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",

@@ -35,8 +35,8 @@
             "scale": 0.95,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 321.05263157894734,
-                "y": 416.8421052631579
+                "x": 320,
+                "y": 415.78947368421046
             }
         },
         "village_tileset.json": {

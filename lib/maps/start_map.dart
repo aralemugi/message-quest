@@ -12,8 +12,8 @@ class StartMap extends StatefulWidget {
 }
 
 class _StartMapState extends State<StartMap> {
-  final tileHeightSize = 33.0;
-  final tileWidthSize = 25.0; // タイルのサイズ定義
+  final tileHeightSize = 26.0;
+  final tileWidthSize = 20.0; // タイルのサイズ定義
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +22,13 @@ class _StartMapState extends State<StartMap> {
       showCollisionArea: true, // 当たり判定の可視化
       // マップ用jsonファイル読み込み
       map: WorldMapByTiled(
-        'maps/new_start_map.json',
+        'maps/start_map3.json',
         forceTileSize: Vector2(tileWidthSize, tileHeightSize),
       ),
 
       // プレイヤーキャラクター
       player: PlayerBeardedDude(
-        Vector2(tileWidthSize * 12, tileHeightSize * 30),
+        Vector2(tileWidthSize * 9.5, tileHeightSize * 23),
         // Vector2(32,32),
         spriteSheet: PlayerSpriteSheet.all,
         initDirection: Direction.down,

@@ -15,12 +15,28 @@
                 "y": 363.47826086956525
             }
         },
+        "new_start_map.tmj": {
+            "scale": 0.7484848484848484,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 392.7935222672065,
+                "y": 141.61943319838065
+            }
+        },
         "start_map.tmj": {
             "scale": 0.5613636363636364,
             "selectedLayer": 1,
             "viewCenter": {
                 "x": 397.24696356275297,
                 "y": 701.8623481781376
+            }
+        },
+        "start_map3.tmj": {
+            "scale": 0.95,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 321.05263157894734,
+                "y": 416.8421052631579
             }
         },
         "village_tileset.json": {
@@ -36,11 +52,11 @@
         }
     },
     "last.imagePath": "/Users/taro/StudioProjects/message_quest/assets/images/maps",
-    "map.height": 33,
+    "map.height": 26,
     "map.lastUsedFormat": "json",
     "map.tileHeight": 32,
     "map.tileWidth": 32,
-    "map.width": 25,
+    "map.width": 20,
     "openFiles": [
     ],
     "project": "message_quest.tiled-project",

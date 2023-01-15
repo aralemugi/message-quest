@@ -8,14 +8,14 @@ class PlayerBeardedDude extends SimplePlayer with ObjectCollision {
       }) : super(
     // SpriteSheetからアニメーションを設定
     animation: SimpleDirectionAnimation(
-      idleDown: spriteSheet.createAnimation(row: 0, stepTime: 0.4, from: 1, to: 2).asFuture(),
-      idleLeft: spriteSheet.createAnimation(row: 1, stepTime: 0.4, from: 1, to: 2).asFuture(),
-      idleRight: spriteSheet.createAnimation(row: 2, stepTime: 0.4, from: 1, to: 2).asFuture(),
-      idleUp: spriteSheet.createAnimation(row: 3, stepTime: 0.4, from: 1, to: 2).asFuture(),
-      runDown: spriteSheet.createAnimation(row: 0, stepTime: 0.1, from: 0, to: 3).asFuture(),
-      runLeft: spriteSheet.createAnimation(row: 1, stepTime: 0.1, from: 0, to: 3).asFuture(),
-      runRight: spriteSheet.createAnimation(row: 2, stepTime: 0.1, from: 0, to: 3).asFuture(),
-      runUp: spriteSheet.createAnimation(row: 3, stepTime: 0.1, from: 0, to: 3).asFuture(),
+      idleDown: spriteSheet.createAnimation(row: 0, stepTime: 0.2, from: 1, to: 2).asFuture(),
+      idleLeft: spriteSheet.createAnimation(row: 1, stepTime: 0.2, from: 1, to: 2).asFuture(),
+      idleRight: spriteSheet.createAnimation(row: 2, stepTime: 0.2, from: 1, to: 2).asFuture(),
+      idleUp: spriteSheet.createAnimation(row: 3, stepTime: 0.2, from: 1, to: 2).asFuture(),
+      runDown: spriteSheet.createAnimation(row: 0, stepTime: 0.2, from: 0, to: 3).asFuture(),
+      runLeft: spriteSheet.createAnimation(row: 1, stepTime: 0.2, from: 0, to: 3).asFuture(),
+      runRight: spriteSheet.createAnimation(row: 2, stepTime: 0.2, from: 0, to: 3).asFuture(),
+      runUp: spriteSheet.createAnimation(row: 3, stepTime: 0.2, from: 0, to: 3).asFuture(),
     ),
     // 画面上の表示サイズ
     // size: Vector2(32, 32) * 3,

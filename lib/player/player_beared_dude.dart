@@ -21,7 +21,7 @@ class PlayerBeardedDude extends SimplePlayer with ObjectCollision {
     // size: Vector2(32, 32) * 3,
     size: Vector2(32, 32),
     // 移動速度
-    speed: 40 * 3,
+    speed: 40 * 2,
     position: position,
     initDirection: initDirection,
   ) {

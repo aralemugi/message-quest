@@ -12,8 +12,8 @@ class StartMap extends StatefulWidget {
 }
 
 class _StartMapState extends State<StartMap> {
-  final tileHeightSize = 33.0;
-  final tileWidthSize = 25.0; // タイルのサイズ定義
+  final tileHeightSize = 45.0;
+  final tileWidthSize = 45.0; // タイルのサイズ定義
 
   @override
   Widget build(BuildContext context) {

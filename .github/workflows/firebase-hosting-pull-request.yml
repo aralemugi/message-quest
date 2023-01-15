@@ -13,8 +13,8 @@ jobs:
       - name: Install Flutter
 #        run: git clone https://github.com/flutter/flutter.git
         uses: britannio/action-install-flutter@v1
-          with:
-            version: "3.3.10"
+        with:
+          version: "3.3.10"
 
         # PATH を通す
       - name: Add path

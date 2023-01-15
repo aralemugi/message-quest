@@ -22,13 +22,13 @@ class _StartMapState extends State<StartMap> {
       showCollisionArea: true, // 当たり判定の可視化
       // マップ用jsonファイル読み込み
       map: WorldMapByTiled(
-        'maps/start_map.json',
+        'maps/new_start_map.json',
         forceTileSize: Vector2(tileWidthSize, tileHeightSize),
       ),
 
       // プレイヤーキャラクター
       player: PlayerBeardedDude(
-        Vector2(tileWidthSize * 7.5, tileHeightSize * 4),
+        Vector2(tileWidthSize * 12, tileHeightSize * 30),
         // Vector2(32,32),
         spriteSheet: PlayerSpriteSheet.all,
         initDirection: Direction.down,

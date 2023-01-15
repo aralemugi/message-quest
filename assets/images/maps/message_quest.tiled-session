@@ -19,8 +19,8 @@
             "scale": 0.5613636363636364,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 400.8097165991902,
-                "y": 705.4251012145749
+                "x": 397.24696356275297,
+                "y": 701.8623481781376
             }
         },
         "village_tileset.json": {
@@ -36,7 +36,7 @@
         }
     },
     "last.imagePath": "/Users/taro/StudioProjects/message_quest/assets/images/maps",
-    "map.height": 44,
+    "map.height": 33,
     "map.lastUsedFormat": "json",
     "map.tileHeight": 32,
     "map.tileWidth": 32,

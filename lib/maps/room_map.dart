@@ -39,7 +39,7 @@ class _RoomMapState extends State<RoomMap> {
       ),
       // カメラ設定
       cameraConfig: CameraConfig(
-        zoom: 1.2,
+        // zoom: 1.2,
         moveOnlyMapArea: true,
         sizeMovementWindow: Vector2.zero(),
         smoothCameraEnabled: true,

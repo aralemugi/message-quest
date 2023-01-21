@@ -5,14 +5,43 @@
     },
     "activeFile": "",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
+        "800.tsj": {
+            "scaleInDock": 0.4755,
+            "scaleInEditor": 1
+        },
+        "801.tsj": {
+            "scaleInDock": 0.3905,
+            "scaleInEditor": 1
+        },
         "default_map.tmj": {
             "scale": 1.15,
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 245.2173913043478,
                 "y": 363.47826086956525
+            }
+        },
+        "in.tsj": {
+            "scaleInDock": 0.2807,
+            "scaleInEditor": 1
+        },
+        "interconn.tsj": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mansion.tsj": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "new_start_map.json": {
+            "scale": 0.59,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 369.49152542372883,
+                "y": 652.542372881356
             }
         },
         "new_start_map.tmj": {
@@ -47,7 +76,19 @@
             "scaleInDock": 0.7957,
             "scaleInEditor": 1
         },
+        "village_tileset_32.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "village_tileset_32.tsj": {
+            "scaleInEditor": 1
+        },
+        "white32.tsj": {
+            "scaleInDock": 1.7314,
+            "scaleInEditor": 1
+        },
+        "インターコン500.tsj": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         }
     },
@@ -61,10 +102,18 @@
     ],
     "project": "message_quest.tiled-project",
     "recentFiles": [
+        "new_start_map.json",
+        "801.tsj",
+        "interconn.tsj",
+        "インターコン500.tsj",
+        "village_tileset_32.json",
+        "800.tsj",
+        "in.tsj",
+        "mansion.tsj",
+        "white32.tsj",
         "village_tileset_32.tsj",
         "village_tileset.json",
-        "default_map.tmj",
-        "village_tileset.tsj"
+        "default_map.tmj"
     ],
     "tileset.lastUsedFormat": "json",
     "tileset.tileSize": {

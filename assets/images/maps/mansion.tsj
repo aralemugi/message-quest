@@ -1,0 +1,14 @@
+{ "columns":45,
+ "image":"set-mansion-in.png",
+ "imageheight":1760,
+ "imagewidth":1440,
+ "margin":0,
+ "name":"mansion",
+ "spacing":0,
+ "tilecount":2475,
+ "tiledversion":"1.8.4",
+ "tileheight":32,
+ "tilewidth":32,
+ "type":"tileset",
+ "version":"1.8"
+}

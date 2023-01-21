@@ -1,0 +1,14 @@
+{ "columns":25,
+ "image":"white.png",
+ "imageheight":461,
+ "imagewidth":818,
+ "margin":0,
+ "name":"white32",
+ "spacing":0,
+ "tilecount":350,
+ "tiledversion":"1.8.4",
+ "tileheight":32,
+ "tilewidth":32,
+ "type":"tileset",
+ "version":"1.8"
+}

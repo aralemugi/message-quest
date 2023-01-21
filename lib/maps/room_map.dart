@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/services.dart';
-import 'package:message_quest/maps/room_map.dart';
 import 'package:message_quest/mob/cat.dart';
 import 'package:message_quest/mob/cat_sprite.dart';
-import 'package:message_quest/utilities/exit_map_sensor.dart';
 
 import '../player/player_beared_dude.dart';
 import '../player/player_sprite.dart';
 
-class StartMap extends StatefulWidget {
-  const StartMap({Key? key}) : super(key: key);
+class RoomMap extends StatefulWidget {
+  const RoomMap({Key? key}) : super(key: key);
   @override
-  State<StartMap> createState() => _StartMapState();
+  State<RoomMap> createState() => _RoomMapState();
 }
 
-class _StartMapState extends State<StartMap> {
+class _RoomMapState extends State<RoomMap> {
   final tileHeightSize = 40.0;
   final tileWidthSize = 40.0; // タイルのサイズ定義
 
@@ -29,33 +27,19 @@ class _StartMapState extends State<StartMap> {
       // マップ用jsonファイル読み込み
       map: WorldMapByTiled(
 
-        'maps/new_start_map.json',
-        forceTileSize: Vector2(tileWidthSize, tileHeightSize),
-
-        objectsBuilder: {
-          'toRoomSensor': ((properties) => ExitMapSensor(
-              position: properties.position,
-              size: properties.size,
-              nextMap: const RoomMap())
-          ),
-          'cat':(properties){
-            cat = Cat(
-                properties.position,
-                CatSprite.sheet
-            );
-            return cat;
-          },
-        }
+          'maps/map2.json',
+          forceTileSize: Vector2(tileWidthSize, tileHeightSize),
       ),
 
       // プレイヤーキャラクター
       player: PlayerBeardedDude(
-        Vector2(tileWidthSize * 12, tileHeightSize * 30),
+        Vector2(tileWidthSize * 23, tileHeightSize * 22),
         spriteSheet: PlayerSpriteSheet.all,
-        initDirection: Direction.down,
+        initDirection: Direction.left,
       ),
       // カメラ設定
       cameraConfig: CameraConfig(
+        zoom: 1.2,
         moveOnlyMapArea: true,
         sizeMovementWindow: Vector2.zero(),
         smoothCameraEnabled: true,

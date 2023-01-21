@@ -36,11 +36,27 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "new_start_map.json": {
-            "scale": 0.59,
+        "map2.json": {
+            "scale": 0.76,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 400,
+                "y": 400.0000000000001
+            }
+        },
+        "map2.tmj": {
+            "scale": 0.7205,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 369.49152542372883,
+                "x": 417.765440666204,
+                "y": 405.2741151977792
+            }
+        },
+        "new_start_map.json": {
+            "scale": 0.59,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 366.10169491525426,
                 "y": 652.542372881356
             }
         },
@@ -93,15 +109,16 @@
         }
     },
     "last.imagePath": "/Users/taro/StudioProjects/message_quest/assets/images/maps",
-    "map.height": 26,
+    "map.height": 25,
     "map.lastUsedFormat": "json",
     "map.tileHeight": 32,
     "map.tileWidth": 32,
-    "map.width": 20,
+    "map.width": 25,
     "openFiles": [
     ],
     "project": "message_quest.tiled-project",
     "recentFiles": [
+        "map2.tmj",
         "new_start_map.json",
         "801.tsj",
         "interconn.tsj",
@@ -112,8 +129,7 @@
         "mansion.tsj",
         "white32.tsj",
         "village_tileset_32.tsj",
-        "village_tileset.json",
-        "default_map.tmj"
+        "village_tileset.json"
     ],
     "tileset.lastUsedFormat": "json",
     "tileset.tileSize": {

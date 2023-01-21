@@ -155,9 +155,31 @@
          "width":25,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":8,
+         "name":"movesencer",
+         "objects":[
+                {
+                 "height":16.9491525423729,
+                 "id":3,
+                 "name":"toRoomSensor",
+                 "rotation":0,
+                 "type":"interconnSensor",
+                 "visible":true,
+                 "width":88.135593220339,
+                 "x":376.271186440678,
+                 "y":686.440677966102
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":8,
- "nextobjectid":3,
+ "nextlayerid":9,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",

@@ -1,0 +1,14 @@
+{ "columns":15,
+ "image":"hotel.png",
+ "imageheight":500,
+ "imagewidth":500,
+ "margin":0,
+ "name":"hotel",
+ "spacing":0,
+ "tilecount":225,
+ "tiledversion":"1.8.4",
+ "tileheight":32,
+ "tilewidth":32,
+ "type":"tileset",
+ "version":"1.8"
+}

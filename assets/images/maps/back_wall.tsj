@@ -1,0 +1,14 @@
+{ "columns":7,
+ "image":"back_wall.jpg",
+ "imageheight":64,
+ "imagewidth":224,
+ "margin":0,
+ "name":"back_wall",
+ "spacing":0,
+ "tilecount":14,
+ "tiledversion":"1.8.4",
+ "tileheight":32,
+ "tilewidth":32,
+ "type":"tileset",
+ "version":"1.8"
+}

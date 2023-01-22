@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/services.dart';
+import 'package:message_quest/decorations/letter.dart';
 import 'package:message_quest/maps/room_map.dart';
 import 'package:message_quest/mob/cat.dart';
 import 'package:message_quest/mob/cat_sprite.dart';
@@ -16,8 +17,19 @@ class StartMap extends StatefulWidget {
 }
 
 class _StartMapState extends State<StartMap> {
-  final tileHeightSize = 40.0;
-  final tileWidthSize = 40.0; // タイルのサイズ定義
+  final tileSize = 40.0;
+
+  void _addGameItems(BonfireGame game) {
+    // キノコ１つ目
+    game.add(
+      LetterDecoration(
+        initPosition: Vector2(tileSize * 6, tileSize * 23),
+        map: widget.runtimeType,
+        id: 0,
+        player: game.player! as PlayerBeardedDude,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +37,17 @@ class _StartMapState extends State<StartMap> {
     late Cat cat;
     // ゲーム画面Widget
     return BonfireWidget(
+
+      onReady: (game) {
+        _addGameItems(game);
+      },
+
       showCollisionArea: false, // 当たり判定の可視化
       // マップ用jsonファイル読み込み
       map: WorldMapByTiled(
 
         'maps/new_start_map.json',
-        forceTileSize: Vector2(tileWidthSize, tileHeightSize),
+        forceTileSize: Vector2(tileSize, tileSize),
 
         objectsBuilder: {
           'toRoomSensor': ((properties) => ExitMapSensor(
@@ -50,7 +67,7 @@ class _StartMapState extends State<StartMap> {
 
       // プレイヤーキャラクター
       player: PlayerBeardedDude(
-        Vector2(tileWidthSize * 12, tileHeightSize * 30),
+        Vector2(tileSize * 12, tileSize * 30),
         spriteSheet: PlayerSpriteSheet.all,
         initDirection: Direction.down,
       ),

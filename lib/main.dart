@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:message_quest/maps/start_map.dart';
 import 'package:message_quest/mob/cat_sprite.dart';
+import 'package:message_quest/player/player_beared_dude_controller.dart';
 import 'package:message_quest/player/player_sprite.dart';
 
 void main() async {
@@ -13,8 +14,10 @@ void main() async {
     await Flame.device.fullScreen();
   }
   // アセットからSpriteSheetを生成
-  await PlayerSpriteSheet.load(); // ←追加
+  await PlayerSpriteSheet.load();
   await CatSprite.load();
+  // controllerをゲーム内どこからでもシングルトンとして扱えるようにする
+  BonfireInjector().put((i) => BearedDudeController());
   runApp(const MyApp());
 }
 

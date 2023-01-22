@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:bonfire/util/direction_animations/simple_direction_animation.dart';
 
-class Cat extends SimpleNpc with ObjectCollision {
+class Cat extends SimpleNpc with ObjectCollision, AutomaticRandomMovement, Pushable {
   Cat(Vector2 position, SpriteSheet spriteSheet,
       {Direction initDirection = Direction.right})
       : super(
@@ -20,7 +20,7 @@ class Cat extends SimpleNpc with ObjectCollision {
     size: Vector2(32, 32),
     position: position,
     initDirection: initDirection,
-    speed: 32,
+    speed: 50,
   ) {
     // 当たり判定の設定
     setupCollision(
@@ -36,4 +36,19 @@ class Cat extends SimpleNpc with ObjectCollision {
   }
 
   static final sizeNpc = Vector2(32, 32);
+
+  @override
+  void update(double dt) {
+
+    // if (!_seePlayer) {
+      runRandomMovement(
+        dt,
+        speed: speed,
+        maxDistance: (speed * 10).toInt(),
+        timeKeepStopped: 500,
+      );
+    // }
+
+    super.update(dt);
+  }
 }

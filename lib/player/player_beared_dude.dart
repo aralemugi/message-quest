@@ -1,6 +1,8 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:message_quest/player/player_beared_dude_controller.dart';
 
-class PlayerBeardedDude extends SimplePlayer with ObjectCollision {
+class PlayerBeardedDude extends SimplePlayer
+    with ObjectCollision, UseStateController<BearedDudeController> {
   PlayerBeardedDude(
       position, {
         required this.spriteSheet,

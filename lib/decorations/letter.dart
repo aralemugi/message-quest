@@ -28,8 +28,30 @@ class LetterDecoration extends GameDecoration with Sensor {
   void onContact(GameComponent component) {
     // プレイヤーが接触したら
     if (component is PlayerBeardedDude) {
+      // アイテム所持数の更新
+      if(player.controller.itemCounts[gameItem] == null){
+        // mapのnullガード
+        player.controller.itemCounts[gameItem] = 0;
+      }
+      player.controller.itemCounts[gameItem] = player.controller.itemCounts[gameItem]! + 1;
+
+      if(player.controller.itemObtained[map] == null){
+        player.controller.itemObtained[map] = {};
+      }
+      player.controller.itemObtained[map]!.add(id);
       // 画面から消える
       removeFromParent();
     }
+  }
+
+  // アイテムがマップに追加された直後に実行される
+  @override
+  void onMount(){
+    if(player.controller.itemObtained[map] != null
+    && player.controller.itemObtained[map]!.contains(id)){
+      // すでに取得済みであれば削除
+      removeFromParent();
+    }
+    super.onMount();
   }
 }

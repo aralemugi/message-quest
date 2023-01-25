@@ -5,10 +5,12 @@ import 'package:message_quest/decorations/letter.dart';
 import 'package:message_quest/maps/room_map.dart';
 import 'package:message_quest/mob/cat.dart';
 import 'package:message_quest/mob/cat_sprite.dart';
+import 'package:message_quest/mob/rabbit.dart';
 import 'package:message_quest/npc/maid_sprite.dart';
 import 'package:message_quest/npc/npc_maid.dart';
 import 'package:message_quest/utilities/exit_map_sensor.dart';
 
+import '../mob/rabbit_sprite.dart';
 import '../player/player_beared_dude.dart';
 import '../player/player_sprite.dart';
 
@@ -37,6 +39,7 @@ class _StartMapState extends State<StartMap> {
   Widget build(BuildContext context) {
 
     late Cat cat;
+    late Rabbit rabbit;
     late NpcMaid npcMaid;
 
     // ゲーム画面Widget
@@ -73,6 +76,13 @@ class _StartMapState extends State<StartMap> {
                 CatSprite.sheet
             );
             return cat;
+          },
+          'rabbit':(properties){
+            rabbit = Rabbit(
+                properties.position,
+                RabbitSprite.sheet
+            );
+            return rabbit;
           },
         }
       ),

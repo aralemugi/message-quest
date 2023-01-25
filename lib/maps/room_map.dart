@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/services.dart';
-import 'package:message_quest/mob/cat.dart';
-import 'package:message_quest/mob/cat_sprite.dart';
+import 'package:message_quest/npc/groom_sprite.dart';
+import 'package:message_quest/npc/npc_bride.dart';
+import 'package:message_quest/npc/npc_groom.dart';
 
+import '../npc/bride_sprite.dart';
 import '../player/player_beared_dude.dart';
 import '../player/player_sprite.dart';
 
@@ -20,15 +22,42 @@ class _RoomMapState extends State<RoomMap> {
   @override
   Widget build(BuildContext context) {
 
-    late Cat cat;
+    late NpcGroom npcGroom;
+    late NpcBride npcBride;
+
     // ゲーム画面Widget
     return BonfireWidget(
+
+      onReady: (game) {
+        // _addGameItems(game);
+        game.addJoystickObserver(npcGroom);
+        game.addJoystickObserver(npcBride);
+      },
+
       showCollisionArea: false, // 当たり判定の可視化
       // マップ用jsonファイル読み込み
       map: WorldMapByTiled(
 
           'maps/map2.json',
           forceTileSize: Vector2(tileWidthSize, tileHeightSize),
+
+          objectsBuilder: {
+            'groom': ((properties) {
+              npcGroom = NpcGroom(
+                  properties.position,
+                  GroomSprite.sheet
+              );
+              return npcGroom;
+            }),
+
+            'bride': ((properties) {
+              npcBride = NpcBride(
+                  properties.position,
+                  BrideSprite.sheet
+              );
+              return npcBride;
+            }),
+          }
       ),
 
       // プレイヤーキャラクター

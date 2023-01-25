@@ -145,9 +145,42 @@
          "width":25,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"npc",
+         "objects":[
+                {
+                 "height":46,
+                 "id":1,
+                 "name":"groom",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":36,
+                 "x":317.105263157895,
+                 "y":157.894736842105
+                }, 
+                {
+                 "height":46,
+                 "id":2,
+                 "name":"bride",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":36,
+                 "x":444.736842105263,
+                 "y":157.894736842105
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":5,
- "nextobjectid":1,
+ "nextlayerid":6,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",

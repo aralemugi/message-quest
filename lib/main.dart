@@ -3,6 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:message_quest/maps/start_map.dart';
 import 'package:message_quest/mob/cat_sprite.dart';
+import 'package:message_quest/mob/rabbit_sprite.dart';
+import 'package:message_quest/npc/bride_sprite.dart';
+import 'package:message_quest/npc/groom_sprite.dart';
 import 'package:message_quest/npc/maid_sprite.dart';
 import 'package:message_quest/player/player_beared_dude_controller.dart';
 import 'package:message_quest/player/player_sprite.dart';
@@ -19,6 +22,9 @@ void main() async {
   await PlayerSpriteSheet.load();
   await MaidSprite.load();
   await CatSprite.load();
+  await GroomSprite.load();
+  await BrideSprite.load();
+  await RabbitSprite.load();
 
   // controllerをゲーム内どこからでもシングルトンとして扱えるようにする
   BonfireInjector().put((i) => BearedDudeController());

@@ -24,11 +24,21 @@
                 "y": 363.47826086956525
             }
         },
+        "door2.tsj": {
+            "scaleInEditor": 1
+        },
+        "hotel.tsj": {
+            "scaleInEditor": 1
+        },
         "in.tsj": {
             "scaleInDock": 0.2807,
             "scaleInEditor": 1
         },
         "interconn.tsj": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "item.tsj": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -53,11 +63,11 @@
             }
         },
         "new_start_map.json": {
-            "scale": 1.3044,
-            "selectedLayer": 0,
+            "scale": 1.091,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 356.4857405703772,
-                "y": 861.6988653787182
+                "x": 380.38496791934006,
+                "y": 666.3611365719523
             }
         },
         "new_start_map.tmj": {
@@ -67,6 +77,9 @@
                 "x": 392.7935222672065,
                 "y": 141.61943319838065
             }
+        },
+        "rag.tsj": {
+            "scaleInEditor": 1
         },
         "start_map.tmj": {
             "scale": 0.5613636363636364,
@@ -118,6 +131,10 @@
     ],
     "project": "message_quest.tiled-project",
     "recentFiles": [
+        "hotel.tsj",
+        "rag.tsj",
+        "item.tsj",
+        "door2.tsj",
         "new_start_map.json",
         "map2.tmj",
         "801.tsj",
@@ -125,11 +142,7 @@
         "インターコン500.tsj",
         "village_tileset_32.json",
         "800.tsj",
-        "in.tsj",
-        "mansion.tsj",
-        "white32.tsj",
-        "village_tileset_32.tsj",
-        "village_tileset.json"
+        "in.tsj"
     ],
     "tileset.lastUsedFormat": "json",
     "tileset.tileSize": {

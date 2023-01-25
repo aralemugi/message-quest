@@ -5,6 +5,8 @@ import 'package:message_quest/decorations/letter.dart';
 import 'package:message_quest/maps/room_map.dart';
 import 'package:message_quest/mob/cat.dart';
 import 'package:message_quest/mob/cat_sprite.dart';
+import 'package:message_quest/npc/maid_sprite.dart';
+import 'package:message_quest/npc/npc_maid.dart';
 import 'package:message_quest/utilities/exit_map_sensor.dart';
 
 import '../player/player_beared_dude.dart';
@@ -35,11 +37,14 @@ class _StartMapState extends State<StartMap> {
   Widget build(BuildContext context) {
 
     late Cat cat;
+    late NpcMaid npcMaid;
+
     // ゲーム画面Widget
     return BonfireWidget(
 
       onReady: (game) {
         _addGameItems(game);
+        game.addJoystickObserver(npcMaid);
       },
 
       showCollisionArea: false, // 当たり判定の可視化
@@ -55,6 +60,13 @@ class _StartMapState extends State<StartMap> {
               size: properties.size,
               nextMap: const RoomMap())
           ),
+          'maid': ((properties) {
+            npcMaid = NpcMaid(
+                properties.position,
+                MaidSprite.sheet
+            );
+            return npcMaid;
+          }),
           'cat':(properties){
             cat = Cat(
                 properties.position,

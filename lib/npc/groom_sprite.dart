@@ -5,7 +5,7 @@ class GroomSprite {
 
   // ゲーム起動時に実行するメソッド
   static Future<void> load() async {
-    sheet = await _create('charactors/groom.jpg');
+    sheet = await _create('charactors/taro.png');
   }
 
   // 画像からSpriteSheetを生成するメソッド

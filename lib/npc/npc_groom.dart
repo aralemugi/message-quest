@@ -17,7 +17,7 @@ class NpcGroom extends SimpleNpc with ObjectCollision, JoystickListener {
       idleRight:
       spriteSheet.createAnimation(row: 2, stepTime: 0.2, from: 1, to: 2)
           .asFuture(),
-      idleUp: spriteSheet.createAnimation(row: 3, stepTime: 0.2, from: 0, to: 2)
+      idleUp: spriteSheet.createAnimation(row: 3, stepTime: 0.2, from: 1, to: 2)
           .asFuture(),
       runDown: spriteSheet.createAnimation(
           row: 0, stepTime: 0.2, from: 0, to: 3).asFuture(),

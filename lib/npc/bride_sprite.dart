@@ -5,7 +5,7 @@ class BrideSprite {
 
   // ゲーム起動時に実行するメソッド
   static Future<void> load() async {
-    sheet = await _create('charactors/bride.jpg');
+    sheet = await _create('charactors/yuika.png');
   }
 
   // 画像からSpriteSheetを生成するメソッド

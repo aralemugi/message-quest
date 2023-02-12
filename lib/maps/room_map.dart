@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/services.dart';
+import 'package:message_quest/maps/start_map.dart';
 import 'package:message_quest/npc/groom_sprite.dart';
 import 'package:message_quest/npc/npc_bride.dart';
 import 'package:message_quest/npc/npc_groom.dart';
@@ -8,6 +9,7 @@ import 'package:message_quest/npc/npc_groom.dart';
 import '../npc/bride_sprite.dart';
 import '../player/player_beared_dude.dart';
 import '../player/player_sprite.dart';
+import '../utilities/exit_map_sensor.dart';
 
 class RoomMap extends StatefulWidget {
   const RoomMap({Key? key}) : super(key: key);
@@ -42,6 +44,11 @@ class _RoomMapState extends State<RoomMap> {
           forceTileSize: Vector2(tileWidthSize, tileHeightSize),
 
           objectsBuilder: {
+            'rightExitSensor': ((properties) => ExitMapSensor(
+                position: properties.position,
+                size: properties.size,
+                nextMap: const StartMap())
+            ),
             'groom': ((properties) {
               npcGroom = NpcGroom(
                   properties.position,
@@ -62,7 +69,7 @@ class _RoomMapState extends State<RoomMap> {
 
       // プレイヤーキャラクター
       player: PlayerBeardedDude(
-        Vector2(tileWidthSize * 23, tileHeightSize * 22),
+        Vector2(tileWidthSize * 23, tileHeightSize * 18),
         spriteSheet: PlayerSpriteSheet.all,
         initDirection: Direction.left,
       ),

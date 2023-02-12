@@ -50,7 +50,7 @@
         },
         "map2.json": {
             "scale": 0.76,
-            "selectedLayer": 4,
+            "selectedLayer": 6,
             "viewCenter": {
                 "x": 400,
                 "y": 400.0000000000001
@@ -68,8 +68,8 @@
             "scale": 1.09,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 422.01834862385317,
-                "y": 832.1100917431193
+                "x": 421.1009174311926,
+                "y": 831.1926605504586
             }
         },
         "new_start_map.tmj": {

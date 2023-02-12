@@ -214,9 +214,31 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":7,
+         "name":"exitSensor",
+         "objects":[
+                {
+                 "height":121.052631578947,
+                 "id":3,
+                 "name":"rightExitSensor",
+                 "rotation":0,
+                 "type":"exitSensor",
+                 "visible":true,
+                 "width":21.0526315789473,
+                 "x":775,
+                 "y":515.789473684211
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":7,
- "nextobjectid":3,
+ "nextlayerid":8,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",

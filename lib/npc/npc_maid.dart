@@ -6,6 +6,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:message_quest/maps/start_map.dart';
+
+import '../player/player_beared_dude_controller.dart';
 
 class NpcMaid extends SimpleNpc with ObjectCollision, JoystickListener {
   NpcMaid(Vector2 position, SpriteSheet spriteSheet,
@@ -42,15 +45,23 @@ class NpcMaid extends SimpleNpc with ObjectCollision, JoystickListener {
     );
   }
 
+  // StateControllerを取得
+  final controller = BonfireInjector().get<BearedDudeController>();
+
   static final sizeNpc = Vector2(32, 32);
   // 視野の半径
   static const radiusVision = 54.0;
   bool _seePlayer = false;
   bool _isTalked = false;
+  bool _havingLetter = false;
 
   @override
   void update(double dt) {
     super.update(dt);
+
+    // StartMapのアイテム取得状態を参照
+    final itemObtained = controller.itemObtained[StartMap];
+    _havingLetter = (itemObtained != null && itemObtained.containsAll({0}));
 
     // Playerとの距離に応じて処理を実行
     seePlayer(
@@ -70,6 +81,7 @@ class NpcMaid extends SimpleNpc with ObjectCollision, JoystickListener {
         }
       },
     );
+
     if(_isTalked){
       // bool _isCollision = false;
       if(!moveRight(20)){
@@ -99,14 +111,29 @@ class NpcMaid extends SimpleNpc with ObjectCollision, JoystickListener {
     }
   }
 
-  void _showTalk() {
+  void _showTalkLetterOk() {
     gameRef.camera.moveToTargetAnimated(this); // カメラをNPCに向ける
     TalkDialog.show(
       context,
       // テキストの量だけ`Say()`を配列に追加する
       [
         Say(
-          text: [const TextSpan(text: 'Welcome!!')], //　表示するテキスト
+          text: [const TextSpan(
+              text: '招待状はお持ちでいらっしゃいますでしょうか？',
+              style: TextStyle(fontFamily: 'JF-Dot-k12x10', color: Colors.white),
+          )], //　表示するテキスト
+          personSayDirection: PersonSayDirection.LEFT, // NPCをテキストの左に表示
+          person: SizedBox(
+            width: size.x,
+            height: size.y,
+            child: animation!.idleDown!.asFuture().asWidget(),
+          ), // 表示するアニメーション
+        ),
+        Say(
+          text: [const TextSpan(
+            text: 'ありがとうございます。確認取れましたので中にお入りください',
+            style: TextStyle(fontFamily: 'JF-Dot-k12x10', color: Colors.white),
+          )], //　表示するテキスト
           personSayDirection: PersonSayDirection.LEFT, // NPCをテキストの左に表示
           person: SizedBox(
             width: size.x,
@@ -127,14 +154,68 @@ class NpcMaid extends SimpleNpc with ObjectCollision, JoystickListener {
         _isTalked = true;
       },
     );
-
   }
+
+  void _showTalkLetterNg() {
+    gameRef.camera.moveToTargetAnimated(this); // カメラをNPCに向ける
+    TalkDialog.show(
+      context,
+      // テキストの量だけ`Say()`を配列に追加する
+      [
+        Say(
+          text: [const TextSpan(
+            text: '招待状はお持ちでいらっしゃいますでしょうか？',
+            style: TextStyle(fontFamily: 'JF-Dot-k12x10', color: Colors.white),
+          )], //　表示するテキスト
+          personSayDirection: PersonSayDirection.LEFT, // NPCをテキストの左に表示
+          person: SizedBox(
+            width: size.x,
+            height: size.y,
+            child: animation!.idleDown!.asFuture().asWidget(),
+          ), // 表示するアニメーション
+        ),
+        Say(
+          text: [const TextSpan(
+            text: '申し訳ありませんが、招待状を持参いただき再度お越しください。',
+            style: TextStyle(fontFamily: 'JF-Dot-k12x10', color: Colors.white),
+          )], //　表示するテキスト
+          personSayDirection: PersonSayDirection.LEFT, // NPCをテキストの左に表示
+          person: SizedBox(
+            width: size.x,
+            height: size.y,
+            child: animation!.idleDown!.asFuture().asWidget(),
+          ), // 表示するアニメーション
+        ),
+      ],
+      // 会話を次に進めるキーの追加
+      logicalKeyboardKeysToNext: [LogicalKeyboardKey.space],
+      // テキストのスタイル
+      style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Colors.white),
+
+      // 会話終了後にカメラをプレイヤーに戻す
+      onFinish: () {
+        gameRef.camera.moveToTargetAnimated(gameRef.player!);
+        // _isTalked = true;
+      },
+    );
+  }
+
 
   @override
   void joystickAction(JoystickActionEvent event) {
+
+    // // StartMapのアイテム取得状態を参照
+    // final itemObtained = controller.itemObtained[StartMap];
+
     if ((event.id == 1 || event.id == LogicalKeyboardKey.space.keyId) &&
         event.event == ActionEvent.DOWN && _seePlayer) {
-      _showTalk();
+      if (_havingLetter) {
+        // 招待状を持っていたら
+        _showTalkLetterOk();
+      } else {
+        // 招待状を持っていなかったら
+        _showTalkLetterNg();
+      }
 
     }
     super.joystickAction(event);

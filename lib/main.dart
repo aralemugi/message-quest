@@ -14,8 +14,6 @@ import 'package:message_quest/player/player_sprite.dart';
 // TODO ホテルのコリジョン
 // TODO map1のビジュ
 // TODO あられむぎの追従
-// TODO 日本語フォント対応
-// TODO 招待状取得とメイド移動条件
 // TODO 新郎新婦のメッセージ
 // TODO スタート画面作成
 // TODO スタート画面で名前と生年月日入力ログイン

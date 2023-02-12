@@ -105,7 +105,10 @@ class NpcGroom extends SimpleNpc with ObjectCollision, JoystickListener {
       // テキストの量だけ`Say()`を配列に追加する
       [
         Say(
-          text: [const TextSpan(text: 'Welcome!!')], //　表示するテキスト
+          text: [const TextSpan(
+              text: '来てくれてさんきゅ!!',
+              style: TextStyle(fontFamily: 'JF-Dot-k12x10', color: Colors.white),
+          )], //　表示するテキスト
           personSayDirection: PersonSayDirection.LEFT, // NPCをテキストの左に表示
           person: SizedBox(
             width: size.x,
